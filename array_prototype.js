@@ -72,6 +72,8 @@ let array = [
   { a: 'b', b: 1 },
   { a: 'c', b: 1 }
 ];
-console.log(array.distinct())
-console.log(array.distinctField('a'))
-console.log(array.groupBy('a'))
+
+console.log('original array', array);
+console.log('distinct', array.distinct());
+console.log('distinctField', array.distinctField('a'));
+console.log('groupBy', array.groupBy('a'));
