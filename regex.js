@@ -29,3 +29,22 @@ function validateTimeWithoutMask(str){
     });
     return newStr;
 }
+
+//underscores case to camel case/ pascal case
+let regex_camel_or_pascal_case = /[_-](.)/g;
+let regex_first_char = /^./g;
+function convertTocamelCase(str) {
+    return str.replace(regex_camel_or_pascal_case, function (e){
+        return e[1].toUpperCase();
+    });
+}
+
+function convertTopascalCase(str) {
+    let result = convertTocamelCase(str);
+    return result.replace(regex_first_char, function(e){
+        return e.toUpperCase();
+    });
+}
+
+console.log(convertTocamelCase('seila_seila1_2aaa'));
+console.log(convertTopascalCase('seila_seila1_2aaa'));
